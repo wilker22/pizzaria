@@ -13,6 +13,8 @@
                                 @csrf
                                 <div class="form-group">
                                     <input type="hidden" name="pizza_id" value="{{ $pizza->id }}">
+                                    <input type="hidden" name="created_at" value="{{ $pizza->created_at }}">
+
                                     <p>Nome: {{ auth()->user()->name }}</p>
                                     <p>E-mail: {{ auth()->user()->email }}</p>
                                     <p>Telefone: <input type="number" placeholder="Apenas números com DDD"
@@ -23,11 +25,21 @@
                                             name="medium_pizza" value="0"></p>
                                     <p>Grande: <input type="number" placeholder="Pizza Grande - Qtd" class="form-control"
                                             name="large_pizza" value="0"></p>
-                                    <p><input type="datetime-local" class="form-control" name="date_time"></p>
+                                    <!--<p><input type="datetime-local" class="form-control" name="date_time"></p>-->
                                     <p><input type="text" class="form-control" name="body"></p>
                                     <p>
                                         <button type="submit" class="form-control btn btn-danger">Comprar</button>
                                     </p>
+                                    @if (session('message'))
+                                        <div class="alert alert-success" role="alert">
+                                            {{session('message')}}
+                                        </div>
+                                    @endif
+                                    @if (session('errmessage'))
+                                        <div class="alert alert-danger" role="alert">
+                                            {{session('errmessage')}}
+                                        </div>
+                                    @endif
                                 </div>
 
                             </form>
@@ -38,23 +50,13 @@
                     </div>
                 </div>
 
-                @if (count($errors) > 0)
-                    <div class="card mt-5">
-                        <div class="card-body">
-                            <div class="alert alert-danger">
-                                @foreach ($errors->all() as $error)
-                                    <p>{{ $error }}</p>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                @endif
+               
 
             </div>
 
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header"{{ $pizza->name }}</div>
+                    <div class="card-header">{{ $pizza->name }}</div>
 
                         <div class="card-body">
                             <img src="{{ asset('storage/' . $pizza->image) }}" class="card-img-top" width="50"
@@ -76,4 +78,22 @@
                 </div>
             </div>
         </div>
+
+        <style>
+        a.list-group-item {
+            font-size: 18px;
+        }
+
+        a.list-group-item:hover {
+            background-color: red;
+            color: #fff;
+        }
+
+        .card-header {
+            background-color: red;
+            color: #fff;
+            font-size: 20px;
+
+        }
+    </style>
     @endsection

@@ -9,7 +9,7 @@
 
                     <div class="card-body">
                         <ul class="list-group">
-                            <a href="{{ route('pizza.index') }}" class="list-group-item list-group-item-action">Mostrar</a>
+                            <a href="{{ route('pizza.index') }}" class="list-group-item list-group-item-action">Listar</a>
                             <a href="{{ route('pizza.create') }}"
                                 class="list-group-item list-group-item-action">Cadastrar</a>
                         </ul>

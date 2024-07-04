@@ -10,7 +10,7 @@
 
                     <div class="card-body">
                         <ul class="list-group">
-                            <a href="{{ route('pizza.index') }}" class="list-group-item list-group-item-action">Mostrar</a>
+                            <a href="{{ route('pizza.index') }}" class="list-group-item list-group-item-action">Listar</a>
                             <a href="{{ route('pizza.create') }}"
                                 class="list-group-item list-group-item-action">Cadastrar</a>
                             <a href="{{ route('user.order') }}" class="list-group-item list-group-item-action">Pedido</a>
@@ -20,6 +20,11 @@
             </div>
 
             <div class="col-md-10">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">Pizzas</li>
+                </ol>
+            </nav>
                 <div class="card">
                     <div class="card-header">Lista de Pizzas <a href="{{ route('pizza.create') }}" class="btn btn-primary"
                             style="float:right">Nova
