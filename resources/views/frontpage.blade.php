@@ -58,14 +58,15 @@
                         <div class="row">
                             @forelse ($pizzas as $pizza)
                                 <div class="card" style="width: 18rem;">
-                                    <img src="{{ asset('storage/' . $pizza->image) }}" class="card-img-top" width="80"
+                                    <img src="{{ asset(Storage::url($pizza->image)) }}" class="card-img-top" width="80"
                                         alt="pizza">
 
                                     <div class="card-body">
                                         <h5 class="card-title">{{ $pizza->name }}</h5>
                                         <p>{{ $pizza->description }}</p>
-                                        <a href={{ route('pizza.show', $pizza->id) }} class="btn btn-danger">Detalhar</a>
-                                        <a href="#" class="btn btn-primary">Comprar</a>
+                                        <a href={{ route('pizza.show', $pizza->id) }} class="btn btn-danger">Fazer
+                                            Pedido</a>
+
                                     </div>
                                 </div>
 

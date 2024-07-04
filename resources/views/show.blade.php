@@ -50,7 +50,7 @@
                     </div>
                 </div>
 
-               
+
 
             </div>
 
@@ -59,7 +59,7 @@
                     <div class="card-header">{{ $pizza->name }}</div>
 
                         <div class="card-body">
-                            <img src="{{ asset('storage/' . $pizza->image) }}" class="card-img-top" width="50"
+                            <img src="{{ asset(Storage::url($pizza->image)) }}" class="card-img-top" width="50"
                                 alt="pizza">
                             <p>
                             <h3>{{ $pizza->description }}</h3>
