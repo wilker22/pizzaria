@@ -33,7 +33,7 @@ class PizzaController extends Controller
      */
     public function store(PizzaStoreRequest $request)
     {
-        $path = $request->image->store('/pizza');
+        $path = $request->image->store('/public/pizza');
         //dd($path);
         Pizza::create([
             'name' => $request->name,

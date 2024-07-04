@@ -20,11 +20,11 @@
             </div>
 
             <div class="col-md-10">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item active" aria-current="page">Pizzas</li>
-                </ol>
-            </nav>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">Pizzas</li>
+                    </ol>
+                </nav>
                 <div class="card">
                     <div class="card-header">Lista de Pizzas <a href="{{ route('pizza.create') }}" class="btn btn-primary"
                             style="float:right">Nova
@@ -58,7 +58,7 @@
                                     @foreach ($pizzas as $key => $pizza)
                                         <tr>
                                             <th scope="row">{{ $key + 1 }}</th>
-                                            <td><img src="{{ asset('storage/' . $pizza->image) }}" width="80"
+                                            <td><img src="{{ asset(Storage::url($pizza->image)) }}" width="80"
                                                     alt="pizza">
                                             </td>
                                             <td>{{ $pizza->name }}</td>

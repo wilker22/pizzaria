@@ -37,4 +37,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     //Pedidos
     Route::get('/user/order', [App\Http\Controllers\UserOrderController::class, 'index'])->name('user.order');
     Route::post('/order/{id}/status', [App\Http\Controllers\UserOrderController::class, 'changeStatus'])->name('order.status');
+
+    //Clientes
+    Route::get('/customers', [App\Http\Controllers\UserOrderController::class, 'customers'])->name('customers');
 });
